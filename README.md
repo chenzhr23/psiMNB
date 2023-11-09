@@ -9,6 +9,8 @@
 - [input data](#input-data)
 - [Usage](#Usage)
   - [generate training dataset](#generate-training-dataset)
+  - [determine k-mer](#determine-k-mer)
+  - [build MNB model](#build-MNB-model)
 
 ### pre-installation
 psiMNB is a training workflow for building Multinomial Naive Bayes (MNB) models of PUS label/probability prediction. psiMNB requires homer/motifFinding/motifStack pre-installation and predominantly used in unix-based operating systems. Therefore, for the usability of psiMNB, we recommend running homer/motifFinding/motifStack and the scripts (build_psi_MNB_overall_test_kmer.py/build_psi_MNB_overall.py/build_psi_MNB_TRUB1.py/build_psi_MNB_PUS3.py/build_psi_MNB_PUS1.py) in WSL2 (WSL2 installation guide: https://pureinfotech.com/install-windows-subsystem-linux-2-windows-10/) or unix-based system with R and python.
