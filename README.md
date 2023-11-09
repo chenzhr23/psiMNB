@@ -38,11 +38,10 @@ Run motifFinding to invoke homer and get motifFinding clustering result: full_ge
 
 Run findMotif_pssm_all.sh to visualize significantly enriched motifs and corresponding metagene plot of mRNA:
 
-<div class="note">
-  <p>findMotif_pssm_all.r require invoking the metagene.sh (provided in **psiFinder** package: https://mega.nz/folder/oaUmhK7I#gSuYH4HW7OhL5qEbgmw0fw).</p>
-   <p>if you want all the motif and metagene result plot concatenated in one file, you also need to ensure you can run **mutool** and **mupdf-x11** function in your terminal.</p>
-</div> 
-
+::: .note
+findMotif_pssm_all.r require invoking the metagene.sh (provided in **psiFinder** package: https://mega.nz/folder/oaUmhK7I#gSuYH4HW7OhL5qEbgmw0fw).
+if you want all the motif and metagene result plot concatenated in one file, you also need to ensure you can run **mutool** and **mupdf-x11** function in your terminal.
+:::
 
 ```shell
 cd ePSI_seq_total_polyA_Day0_mix_motifs/full_gene_HomerGenomeResults
