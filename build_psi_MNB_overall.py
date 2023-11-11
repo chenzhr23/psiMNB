@@ -61,7 +61,7 @@ with open('overall_multinomialnb_model.pkl', 'wb') as f:
     pickle.dump(classifier, f)
 y_pred = classifier.predict(X_test)
 
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef, precision_score, recall_score
 print("Confusion matrix for predictions on human test RNA sequence\n")
 print(pd.crosstab(pd.Series(y_test, name='Actual'), pd.Series(y_pred, name='Predicted')))
 def get_metrics(y_test, y_predicted):
@@ -69,9 +69,10 @@ def get_metrics(y_test, y_predicted):
     precision = precision_score(y_test, y_predicted, average='weighted')
     recall = recall_score(y_test, y_predicted, average='weighted')
     f1 = f1_score(y_test, y_predicted, average='weighted')
-    return accuracy, precision, recall, f1
-accuracy, precision, recall, f1 = get_metrics(y_test, y_pred)
-print("accuracy = %.3f \nprecision = %.3f \nrecall = %.3f \nf1 = %.3f" % (accuracy, precision, recall, f1))
+    mcc = matthews_corrcoef(y_test, y_predicted)
+    return accuracy, precision, recall, f1, mcc
+accuracy, precision, recall, f1, mcc = get_metrics(y_test, y_pred)
+print("accuracy = %.3f \nprecision = %.3f \nrecall = %.3f \nf1 = %.3f \nmcc = %.3f" % (accuracy, precision, recall, f1, mcc))
 
 
 ####preform prediction####
