@@ -1,6 +1,6 @@
 # psiMNB
 
-## Multinomial Naive Bayes for finding PUS-dependent pseudouridylation
+## Active learning approach of Multinomial Naive Bayes for finding PUS-dependent pseudouridylation
 
 ![psiMNB](psiMNB.png)
 
@@ -13,7 +13,7 @@
   - [build MNB model](#build-MNB-model)
 
 ### pre-installation
-**psiMNB** is a training workflow for building Multinomial Naive Bayes (MNB) models of PUS label/probability prediction. psiMNB requires **homer/motifFinding/motifStack** pre-installation and predominantly used in unix-based operating systems. Therefore, for the usability of **psiMNB**, we recommend running **homer/motifFinding/motifStack** and all the scripts in WSL2 (WSL2 installation guide: https://pureinfotech.com/install-windows-subsystem-linux-2-windows-10/) or unix-based system with R and python.
+**psiMNB** is a training workflow for building Multinomial Naive Bayes (MNB) models of PUS label/probability prediction using active learning approach. psiMNB requires **homer/motifFinding/motifStack** pre-installation and predominantly used in unix-based operating systems. Therefore, for the usability of **psiMNB**, we recommend running **homer/motifFinding/motifStack** and all the scripts in WSL2 (WSL2 installation guide: https://pureinfotech.com/install-windows-subsystem-linux-2-windows-10/) or unix-based system with R and python.
 
 ```R
 #use pacman to install packages in batch
