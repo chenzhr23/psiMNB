@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<configure>
+  <genomeFile>hg38.fa</genomeFile>
+  <faidxFile>hg38.fa.fai</faidxFile>
+  <bedtools>bedtools</bedtools>
+  <findMotif>findMotif</findMotif>
+  <findMotifParameter>-p -10 -f 2 -s 0.85 -r 0.03 -n 10</findMotifParameter>
+  <homer>findMotifsGenome.pl</homer>
+  <homerParameter>-norevopp -noknown -rna -len 4,5,6,7,8,9 -p 20 -size given -dumpFasta</homerParameter>
+  <cdHit>cd-hit</cdHit>
+  <cdHitParameter>-M 0 -c 0.80 -d 150 -T 30</cdHitParameter>
+</configure>
