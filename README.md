@@ -31,7 +31,7 @@ Test data: human_PUS_MNB_input_k-mer_overall.txt, human_PUS_MNB_input_k-mer_TRUB
 
 #### Generate training dataset
 
-Run **findMotif.sh** to invoke homer and get motifFinding clustering result: full_gene_contigs.bed6 is the bed6 file containing all the input Ψ-sites
+Run **findMotif.sh** to automatically invoke motifFinding.pl and motifStack_vis.r (to generate motif clustering result)
 
 !!! **findMotif.sh** require motifConfigure_hg38.xml file configuration setting. required files: hg38.fa/hg38.fa.fai; required tools to be installed: bedtools, homer (findMotifsGenome.pl), cd-hit
 ![motifConfigure_hg38](motifConfigure_hg38.png)
