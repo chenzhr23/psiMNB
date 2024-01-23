@@ -43,9 +43,7 @@ Finally, based on the output file ('findMotif_pssm_append_info.xlsx' suffix) gen
 python build_psi_MNB_overall_test_kmer.py # input data: human_PUS_MNB_input_k-mer_overall.txt is loaded
 ```
 
-![psiMNB](alpha_plot.png)
-![psiMNB](kmer_plot.png)
-
+![alpha_plot](alpha_plot.png) ![kmer_plot](kmer_plot.png)
 
 #### Build MNB model and run prediction
 ```python
@@ -54,3 +52,6 @@ python build_psi_MNB_TRUB1.py # input data: human_PUS_MNB_input_k-mer_TRUB1.txt 
 python build_psi_MNB_PUS3.py # input data: human_PUS_MNB_input_k-mer_PUS3.txt is loaded
 python build_psi_MNB_PUS1.py # input data: human_PUS_MNB_input_k-mer_PUS1.txt is loaded
 ```
+
+![model_result](model_result.png)
+
