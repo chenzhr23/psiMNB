@@ -37,6 +37,10 @@ Run **findMotif.sh** to automatically invoke motifFinding.pl and motifStack_vis.
 
 ![motifConfigure_hg38](motifConfigure_hg38.png)
 
+> **Notice:** **findMotif.sh** will invoke homer (findMotifsGenome.pl) to generate motif enrichment result (e.g. 'homerResults/motif10.motif'), therefore, to improve enrichment effectiveness for human, we recommend replacing the default homer background file (all.rna.motifs) to the new version we provided!
+
+![all.rna.motifs](all.rna.motifs.png)
+
 ```shell
 bash findMotif.sh ePSI_seq_total_polyA_Day0_mix.bed Day0_common_anno_group_redundance_mix.txt
 ```
