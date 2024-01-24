@@ -39,6 +39,7 @@ Run **findMotif.sh** to automatically invoke motifFinding.pl and motifStack_vis.
 
 ```shell
 bash findMotif.sh ePSI_seq_total_polyA_Day0_mix.bed Day0_common_anno_group_redundance_mix.txt
+# name of 'ePSI_seq_total_polyA_Day0_mix.bed' should be correspond to (One on One) name column of 'Day0_common_anno_group_redundance_mix.txt' (the former is provided to offer genome location, the latter is provided to offer annotation for each observation in the former)
 ```
 
 Finally, based on the output file ('findMotif_pssm_append_info.xlsx' suffix) generated from **findMotif.sh**, manually organizate input dataset like the [input data](#input-data) (a two-column txt file with the first column as 20nt extended sequence and the second as assigned labels based on known tRNA Ψ-sites evidence)
