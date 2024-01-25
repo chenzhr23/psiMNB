@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-path="G:/ModificationToolBox/PseudoTB_manuscript/psiFinder_20221012/motif_MNB"
+path="."
 os.chdir(path)
 
 human_rna = pd.read_table('human_PUS_MNB_input_k-mer_PUS1.txt')
@@ -58,7 +58,7 @@ import pickle
 classifier = MultinomialNB(alpha=0.1)
 classifier.fit(X_train, y_train)
 with open('PUS1_multinomialnb_model.pkl', 'wb') as f:
-    pickle.dump(classifier, f)
+    pickle.dump([cv, classifier], f)
 y_pred = classifier.predict(X_test)
 
 from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef, precision_score, recall_score
@@ -77,7 +77,7 @@ print("accuracy = %.3f \nprecision = %.3f \nrecall = %.3f \nf1 = %.3f \nmcc = %.
 
 ####preform prediction####
 with open('PUS1_multinomialnb_model.pkl', 'rb') as f:
-    classifier = pickle.load(f)
+    cv, classifier = pickle.load(f)
 
 to_pred = pd.read_table('Day0_common_anno_group_redundance_mix.txt')
 to_pred.head()
@@ -92,10 +92,12 @@ unique, counts = np.unique(predicted_label, return_counts=True)
 print(dict(zip(unique, counts)))
 predicted_proba = classifier.predict_proba(to_pred_seq_cv)
 
-predicted_proba_df = pd.DataFrame(predicted_proba, columns=['non-PUS1', 'PUS1'])
+def compare(row):
+  max_val = row.max()
+  max_col = row.idxmax()
+  return max_col
+
+predicted_proba_df = pd.DataFrame(predicted_proba, columns=list(classifier.classes_))
+predicted_proba_df['PUS-targeting'] = predicted_proba_df.apply(compare, axis=1)
 to_pred = pd.concat([to_pred, predicted_proba_df], axis=1)
-to_pred['predicted_PUS1_label'] = pd.DataFrame(predicted_label)
-mapping = {0: 'non-PUS1', 1: 'PUS1'}
-to_pred['enzyme'] = to_pred['predicted_PUS1_label'].map(mapping)
-to_pred.head()
 to_pred.to_excel("Day0_common_anno_group_redundance_mix_PUS1_prediction.xlsx",index=False)# pip install openpyxl
