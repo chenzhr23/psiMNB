@@ -10,7 +10,7 @@
 - [Usage](#Usage)
   - [Generate training dataset](#generate-training-dataset)
   - [Determine k-mer](#determine-k-mer)
-  - [Build MNB model](#build-MNB-model)
+  - [Build MNB model](#build-mnb-model)
 
 ### Pre-installation
 **psiMNB** is a training workflow for building Multinomial Naive Bayes (MNB) models of PUS label/probability prediction using active learning approach. psiMNB requires **homer(findMotifsGenome.pl)/bedtools/cd-hit and several R packages** pre-installation and predominantly used in unix-based operating systems. Therefore, for the usability of **psiMNB**, we recommend running all the tools and scripts in WSL2 (WSL2 installation guide: https://pureinfotech.com/install-windows-subsystem-linux-2-windows-10/) or unix-based system with R and python.
